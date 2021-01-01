@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
+const App = () => {
+  const [count, setCount] = useState(0);
+
+
+  return (
+    <div>
+      <p>The current count is {count}</p>
+      <button onClick={() => setCount(count + 1)}>+1</button>
+      <button onClick={() => setCount(count - 1)}>-1</button>
+      <button onClick={() => setCount(0)}>Reset</button>
+    </div>
+  )
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <div>My New Content</div>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
