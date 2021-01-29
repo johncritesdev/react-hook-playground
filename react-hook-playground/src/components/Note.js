@@ -1,23 +1,6 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import NotesContext from '../context/notes-context';
-
-const useMousePosition = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    console.log('setting up event');
-    document.addEventListener('mousemove', (e) => {
-      setPosition({
-        x: e.pageX,
-        y: e.pageY
-      })
-    })
-  }, []);
-
-
-
-  return position;
-}
+import useMousePosition from '../hooks/useMousePosition';
 
 const Note = ({ note }) => {
 
